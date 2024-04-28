@@ -1,2 +1,2 @@
-# playingWithGodot
-A little Godot activity for practice
+# Playing with Python
+A little Python activity for practice
