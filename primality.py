@@ -1,7 +1,10 @@
-# Function to check if number 
+from math import sqrt # Module needed for sqrt() function
+# Function to check if number is prime
 
-def primalCheck(num):
-    if num == 1:
-        return True
-    else: return False
-
+def primalCheck(n):
+    if n < 2:
+        return False
+    for i in range(2, int(sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
