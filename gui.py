@@ -23,7 +23,7 @@ def handle_click():
     
 # Regular expression to determine if input is a valid number 
 # e.g. 1,234,567 is considered valid, but 1,23,456 is not a valid number
-    if re.search("^\d{1,3}(?:,\d{3})*$", value):
+    if re.search(r"^\d{1,3}(?:,\d{3})*$", value):
         value = value.replace(',','')           # Removes all the commas in the value so it can be used for prime and factorial
 
 # Invalid input warning occurs when:
