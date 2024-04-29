@@ -1,26 +1,47 @@
-import tkinter as tk
-from factorial import fact
+# import tkinter module
+from tkinter import * 
+from tkinter.ttk import *
 
-def increase():
-    value = int(lbl_value["text"])
-    lbl_value["text"] = f"{value + 1}"
+# creating main tkinter window/toplevel
+master = Tk()
 
-def decrease():
-    value = int(lbl_value["text"])
-    lbl_value["text"] = fact(value)
+# this will create a label widget
+l1 = Label(master, text = "Height")
+l2 = Label(master, text = "Width")
 
-window = tk.Tk()
+# grid method to arrange labels in respective
+# rows and columns as specified
+l1.grid(row = 0, column = 0, sticky = W, pady = 2)
+l2.grid(row = 1, column = 0, sticky = W, pady = 2)
 
-window.rowconfigure(0, minsize=50, weight=1)
-window.columnconfigure([0, 1, 2], minsize=50, weight=1)
+# entry widgets, used to take entry from user
+e1 = Entry(master)
+e2 = Entry(master)
 
-btn_decrease = tk.Button(master=window, text="-", command=decrease)
-btn_decrease.grid(row=0, column=0, sticky="nsew")
+# this will arrange entry widgets
+e1.grid(row = 0, column = 1, pady = 2)
+e2.grid(row = 1, column = 1, pady = 2)
 
-lbl_value = tk.Label(master=window, text="0")
-lbl_value.grid(row=0, column=1)
+# checkbutton widget
+c1 = Checkbutton(master, text = "Preserve")
+c1.grid(row = 2, column = 0, sticky = W, columnspan = 2)
 
-btn_increase = tk.Button(master=window, text="+", command=increase)
-btn_increase.grid(row=0, column=2, sticky="nsew")
+# adding image (remember image should be PNG and not JPG)
+# img = PhotoImage(file = r"C:\Users\Admin\Pictures\capture1.png")
+# img1 = img.subsample(2, 2)
 
-window.mainloop()
+# setting image with the help of label
+# Label(master, image = img1).grid(row = 0, column = 2,
+# 	columnspan = 2, rowspan = 2, padx = 5, pady = 5)
+
+# button widget
+b1 = Button(master, text = "Zoom in")
+b2 = Button(master, text = "Zoom out")
+
+# arranging button widgets
+b1.grid(row = 2, column = 2, sticky = E)
+b2.grid(row = 2, column = 3, sticky = E)
+
+# infinite loop which can be terminated 
+# by keyboard or mouse interrupt
+mainloop()
