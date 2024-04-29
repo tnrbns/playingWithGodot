@@ -3,10 +3,10 @@ from factorial import fact
 import tkinter as tk
 import re
 
-# Checks if number is prime
 # Biggest prime number = 67,280,421,310,721
 # Max factorial before it throws an error = 1558!
 
+# Checks if number is prime
 def isPrime(new_val):
     if primalCheck(new_val)==True:
         value1["text"] = str(f"{new_val:,}") + " is a prime number."
@@ -38,8 +38,8 @@ def handle_click():
         isPrime(int(value))
         factorial(int(value))
     
-# Create new window
-window = tk.Tk()
+# Actual GUI that will be displayed in the exeutable
+window = tk.Tk() # Create a new executable
 
 greeting = tk.Label(text="Input entry")
 
